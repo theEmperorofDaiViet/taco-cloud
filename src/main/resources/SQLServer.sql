@@ -89,4 +89,3 @@ insert into dbo.Ingredient (id, name, type)
 insert into dbo.Ingredient (id, name, type)
 				values ('SRCR', 'Sour Cream', 'SAUCE'); 
 go
-
