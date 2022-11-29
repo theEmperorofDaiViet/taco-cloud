@@ -3,14 +3,14 @@
         xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Taco Cloud</title>
-        <link rel="stylesheet" th:href="@{/styles.css?version=1}" />
+        <link rel="stylesheet" th:href="@{/styles.css}" />
     </head>
 
     <body>
         <h1>Login</h1>
         <img th:src="@{/images/TacoCloud.png}"/>
 
-        <div class="validationError" th:if="${error}">
+        <div class="validationError" th:if="${param.error}">
             Unable to login. Check your username and password.
         </div>
 
