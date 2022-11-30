@@ -22,20 +22,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-		auth.jdbcAuthentication()
-			.dataSource(dataSource)
-			.usersByUsernameQuery(
-				"Select username, password, enabled from Users where username=?")
-			.authoritiesByUsernameQuery(
-				"select username, authority from Authorities where username=?")
-			.passwordEncoder(encoder);
-	
+		auth.ldapAuthentication()
+			.userSearchBase("ou=people")
+			.userSearchFilter("(uid={0})")
+			.groupSearchBase("ou=roles")
+			.groupSearchFilter("member={0}")
+			.passwordCompare()
+			.passwordEncoder(encoder)
+			.passwordAttribute("userPassword")
+			.and()
+			.contextSource()
+				.root("dc=tacocloud2,dc=com")
+				.ldif("classpath:users.ldif");
 	}
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable().authorizeRequests()
-				.antMatchers("/design", "/orders").hasRole("USER")
+				.antMatchers("/design", "/orders").permitAll()
 				.antMatchers("/", "/**").permitAll()
 			.and()
 				.formLogin().loginPage("/login")

@@ -1,0 +1,26 @@
+dn: ou=roles,dc=tacocloud2,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: roles
+
+dn: ou=people,dc=tacocloud2,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: uid=ben,ou=people,dc=tacocloud2,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Sofya Semyonovna Marmeladova
+sn: Marmeladova
+uid: sonya
+userPassword: {noop}marmeladova
+
+dn: cn=ROLE_USER,ou=roles,dc=tacocloud2,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: ROLE_USER
+ou: user
+uniqueMember: uid=sonya,ou=people,dc=tacocloud2,dc=com
