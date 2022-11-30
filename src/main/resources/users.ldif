@@ -18,9 +18,9 @@ sn: Marmeladova
 uid: sonya
 userPassword: {noop}marmeladova
 
-dn: cn=ROLE_USER,ou=roles,dc=tacocloud2,dc=com
+dn: cn=USER,ou=roles,dc=tacocloud2,dc=com
 objectclass: top
 objectclass: groupOfUniqueNames
-cn: ROLE_USER
+cn: USER
 ou: user
 uniqueMember: uid=sonya,ou=people,dc=tacocloud2,dc=com
