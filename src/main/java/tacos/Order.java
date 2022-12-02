@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
@@ -36,25 +37,14 @@ public class Order implements Serializable{
 	@Id
 	private Long id;
 	
+	@ManyToOne(targetEntity=User.class)
+	@JoinColumn(name="registeredUser", nullable=false)
+	private User user;
+	
 	@ManyToMany(targetEntity=Taco.class)
 	@JoinTable(name="Taco_Order_Tacos", joinColumns = { @JoinColumn(name="tacoOrder") },
 										inverseJoinColumns = { @JoinColumn(name="taco") })
 	private List<Taco> tacos = new ArrayList<>();
-	
-	@NotBlank(message = "Name is required")
-	private String name;
-	
-	@NotBlank(message = "Street is required")
-	private String street;
-	
-	@NotBlank(message = "City is required")
-	private String city;
-	
-	@NotBlank(message = "State is required")
-	private String state;
-	
-	@NotBlank(message = "Zip is required")
-	private String zip;
 	
 	@CreditCardNumber(message = "Not a valid credit card number")
 	private String ccNumber;
