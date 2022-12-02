@@ -39,16 +39,13 @@ IF NOT EXISTS (
     WHERE s.name = 'dbo' AND t.name = 'Taco_Order') 
 	create table dbo.Taco_Order (
 		id int IDENTITY(1,1) NOT NULL,
-		name varchar(50) not null,
-		street varchar(50) not null,
-		city varchar(50) not null,
-		state varchar(2) not null,
-		zip varchar(10) not null,
+		registeredUser bigint not null,
 		ccNumber varchar(16) not null,
 		ccExpiration varchar(5) not null,
 		ccCVV varchar(3) not null,
 		placedAt datetime not null,
-		PRIMARY KEY (id)
+		PRIMARY KEY (id),
+		FOREIGN KEY (registeredUser) REFERENCES RegisteredUsers(id)
 	);
 go
 IF NOT EXISTS (
