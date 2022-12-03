@@ -1,9 +1,8 @@
 package tacos.web;
 
-import java.security.Principal;
-
 import javax.validation.Valid;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +15,6 @@ import lombok.extern.slf4j.Slf4j;
 import tacos.Order;
 import tacos.User;
 import tacos.data.OrderRepository;
-import tacos.data.UserRepository;
 
 @Slf4j
 @Controller
@@ -25,12 +23,9 @@ import tacos.data.UserRepository;
 public class OrderController {
 	
 	private OrderRepository orderRepo;
-	
-	private UserRepository userRepo;
-	
-	public OrderController(OrderRepository orderRepo, UserRepository userRepo) {
+
+	public OrderController(OrderRepository orderRepo) {
 		this.orderRepo = orderRepo;
-		this.userRepo = userRepo;
 	}
 	
 	@GetMapping("/current")
@@ -40,11 +35,11 @@ public class OrderController {
 	
 	@PostMapping
 	public String processOrder(@Valid Order order, Errors errors, SessionStatus sessionStatus,
-																  Principal principal) {
+																  Authentication authentication) {
 		if(errors.hasErrors()) {
 			return "orderForm";
 		}
-		User user = userRepo.findByUsername(principal.getName());
+		User user = (User) authentication.getPrincipal();
 		order.setUser(user);
 		log.info("Order submitted: " + order);
 		orderRepo.save(order);
