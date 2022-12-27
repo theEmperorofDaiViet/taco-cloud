@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Taco Cloud</title>
+        <link rel="stylesheet" th:href="@{/styles.css}" />
+    </head>
+
+    <body>
+        <th:block th:include="/_header"></th:block>
+        <h1>Order History</h1>
+        <img th:src="@{/images/TacoCloud.png}"/>
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>Time</th>                
+                <th>Tacos</th>
+                <th>Customer</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>ccNumber</th>
+                <th>ccExpiration</th>
+                <th>ccCVV</th>
+            </thead>
+            <tbody>
+                <tr th:each="order : ${orders}">
+                    <td><span th:text="${order.id}"></span></td>
+                    <td><span th:text="${order.placedAt}"></span></td>
+                    <td>
+                        <th:block  th:each="taco : ${order.tacos}">
+                            <span th:text="${taco.id + ': ' + taco.name}"></span><br/>
+                        </th:block>
+                    </td>
+                    <td><span th:text="${order.user.fullname}"></span></td>
+                    <td><span th:text="${order.user.phoneNumber}"></span></td>
+                    <td><span th:text="${order.user.street + ', ' + order.user.city + ', ' + order.user.state}"></span></td>
+                    <td><span th:text="${order.ccNumber}"></span></td>
+                    <td><span th:text="${order.ccExpiration}"></span></td>
+                    <td><span th:text="${order.ccCVV}"></span></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+
+</html>

@@ -9,6 +9,12 @@
             </form>
         </th:block>
 
+        <th:block sec:authorize="isAuthenticated()">
+            <form method="GET" th:action="@{/orders}">
+                <input type="submit" value="History"/>
+            </form>
+        </th:block>
+
         <th:block sec:authorize="!isAuthenticated()">
             <form method="GET" th:action="@{/login}">
                 <input type="submit" value="Login"/>
