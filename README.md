@@ -62,7 +62,7 @@ After cloning the repository, you can open the project by Spring Tool Suite.
 
 Open the application.properties file in [/src/main/resources](/src/main/resources) to change the information about the datasource to fit your own settings.
 
-Open SQL Server and create a database according to the script in SQLServer.sql file in [/src/main/resources](/../../tree/master/src/main/resources).
+Open SQL Server and create a database according to the script in SQLServer.sql file in [/src/main/resources](/src/main/resources).
 
 Finally, back to Spring Tool Suite and run the application.
 
