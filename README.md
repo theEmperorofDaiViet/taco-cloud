@@ -60,9 +60,9 @@ git clone https://github.com/theEmperorofDaiViet/taco-cloud.git
 ```
 After cloning the repository, you can open the project by Spring Tool Suite.
 
-Open the application.properties file in [/src/main/resource](/src/main/resource) to change the information about the datasource to fit your own settings.
+Open the application.properties file in [/src/main/resource](/../../tree/master/src/main/resource) to change the information about the datasource to fit your own settings.
 
-Open SQL Server and create a database according to the script in SQLServer.sql file in [/src/main/resource](/src/main/resource).
+Open SQL Server and create a database according to the script in SQLServer.sql file in [/src/main/resource](/../../tree/master/src/main/resource).
 
 Finally, back to Spring Tool Suite and run the application.
 
