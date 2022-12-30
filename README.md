@@ -44,8 +44,27 @@ The Taco Cloud project from the famous book - "Spring in Action".
 # Getting Started
 
 ## Prerequisites
+Before cloning and using this application, you'll need to install these things on your computer:
+* [Java SE Development Kit 17](https://www.oracle.com/java/technologies/downloads/#java17): Of course you need to have Java installed to run a Java application. I used Java 17, but I think it works fine with the widely-used Java 8 (JDK 1.8), as well.
+* [Spring Tool Suite 4](https://spring.io/tools): an Eclipse-based IDE to develop Spring applications. 
+It provides a ready-to-use environment to implement, run, deploy, and debug the application. 
+It validates your application and provides quick fixes for the applications.
+* [Microsoft SQL Server 2019](https://www.microsoft.com/en-us/sql-server/sql-server-2019): a relational database management system developed by Microsoft.
+As a database server, it is a software product with the primary function of storing and retrieving data as requested by other software applications - 
+which may run either on the same computer or on another computer across a network (including the Internet).
 
 ## Installation
+You can install this application by cloning this repository into your current working directory:
+```sh
+git clone https://github.com/theEmperorofDaiViet/taco-cloud.git
+```
+After cloning the repository, you can open the project by Spring Tool Suite.
+
+Open the application.properties file in [/src/main/resource](/src/main/resource) to change the information about the datasource to fit your own settings.
+
+Open SQL Server and create a database according to the script in SQLServer.sql file in [/src/main/resource](/src/main/resource).
+
+Finally, back to Spring Tool Suite and run the application.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
