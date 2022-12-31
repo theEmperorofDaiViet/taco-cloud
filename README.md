@@ -95,10 +95,17 @@ Finally, back to Spring Tool Suite and run the application.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # Usage
+<i>Here is an example to illustrate the features of this application</i>
 
 <p align="center">
     <img src="/src/main/resources/static/images/Usage.gif">
 </p>
+
+* First, I log in to an existing account. I design two tacos and place an order for them.
+While entering information, I intend to provide data in the wrong format to illustrate data validation.
+Finally, I check order history to see my previous orders, including the order I've just placed.
+
+* Second, I log out and create a new account. I log in that new account and do the same things as above.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
