@@ -16,7 +16,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#api-documentation">API Documentation</li>
+    <li><a href="#key-features">Key Features</li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -68,7 +68,28 @@ Finally, back to Spring Tool Suite and run the application.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# API Documentation
+# Key Features
+This project covers the features from chapter 1 to 5 of "Spring in Action":
+
+* Traditional multipage application (MPA) with Spring MVC:
+  - Design custom tacos by selecting ingredients
+  - Place an order for the tacos you designed
+  - Validate form input and display validation errors
+  - See your order history
+
+* Spring Data: store information about ingredients, tacos, orders in Microsoft SQL Server database with:
+  - JDBC (in previous version)
+  - JPA
+
+* Spring Security:
+  - Custom user storage:
+    + In-memory user store (in previous version)
+    + JDBC-based user store (in previous version)
+    + LDAP-backed user store (in previous version)
+    + Custom user details service
+  - Log in/ Log out
+  - Register new account
+  - Secure against CSRF attacks
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
