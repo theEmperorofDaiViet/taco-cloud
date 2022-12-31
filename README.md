@@ -96,6 +96,10 @@ Finally, back to Spring Tool Suite and run the application.
 
 # Usage
 
+<p align="center">
+    <img src="/src/main/resources/static/images/Usage.gif">
+</p>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # Contact
